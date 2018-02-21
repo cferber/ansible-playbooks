@@ -1,0 +1,9 @@
+- hosts: all
+  remote_user: root
+
+  tasks:
+  - name: mariadb is installed
+    yum: name=mariadb-server state=installed
+
+  - name: mariadb is running and enabled
+    service: name=mariadb state=started enabled=yes
